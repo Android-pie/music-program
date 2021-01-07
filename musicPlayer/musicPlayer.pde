@@ -16,3 +16,30 @@ void setup() {
 
 void draw() {
 }
+
+void keyPressed() {
+  if (key == 'p' || key == 'P') {
+    if (song1.isPlaying()) {
+      song1.pause();
+    } else if ( song1.position() == song1.lenght() ) {
+      song1.rewind();
+      song1.play();
+    } else {
+      song1.play();
+    }
+  }
+  
+
+  if (key == 's' || key == 'S') {
+    if (song1.isPlaying()) {
+      song1.pause();
+      song1.rewind();
+    } else if ( song1.position() == song1.lenght() ) {
+      song1.rewind();
+    }
+  }
+  
+  if (key == 'R' || key == 'r') song1.skip(-1000);
+  if (key == 'F' || key == 'f') song1.skip(1000);
+  
+}
