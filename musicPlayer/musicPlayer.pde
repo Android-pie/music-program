@@ -7,11 +7,14 @@ import ddf.minim.ugens.*;
 
 Minim minim;
 AudioPlayer song1;
+
+int loopIntNum;
 void setup() {
   size(500, 400);
   minim = new Minim(this);
   song1 = minim.loadFile("../music/groove.mp3");
   song1.play();
+  loopIntNum = 1;
 }
 
 void draw() {
@@ -41,5 +44,7 @@ void keyPressed() {
   
   if (key == 'R' || key == 'r') song1.skip(-1000);
   if (key == 'F' || key == 'f') song1.skip(1000);
+ 
+  if (key == 'l' || key == 'L') song1.loop(loopIntNum);
   
 }
