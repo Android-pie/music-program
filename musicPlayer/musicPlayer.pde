@@ -84,8 +84,14 @@ void keyPressed() {
     if (song[currentSong].isPlaying() ) {
       song[currentSong].pause();
       song[currentSong].rewind();
+      if (currentSong == numOfSongs - 1){
+        currentSong = numOfSongs - numOfSongs;
+      }else{
       currentSong++;
+      }
+      song[currentSong].play();
     }else{
+      
       song[currentSong].rewind();
      currentSong ++;
     }
