@@ -11,12 +11,13 @@ AudioPlayer[] song = new AudioPlayer[numOfSongs];
 AudioMetaData[] songMetaData = new AudioMetaData[numOfSongs];
 int loopIntNum;
 int currentSong = numOfSongs - numOfSongs;
+
 void setup() {
   size(500, 400);
   minim = new Minim(this);
-  song[currentSong] = minim.loadFile("../music/groove.mp3");
-  song[currentSong += 1] = minim.loadFile("../music/groove1.mp3");
-  song[currentSong += 1] = minim.loadFile("../music/groove2.mp3");
+  song[currentSong] = minim.loadFile("../music/grove.mp3");
+  song[currentSong += 1] = minim.loadFile("../music/Grove2.mp3");
+  song[currentSong += 1] = minim.loadFile("../music/Grove3.mp3");
   //
   songMetaData[0] = song[0].getMetaData();
   songMetaData[1] = song[1].getMetaData();
@@ -30,7 +31,7 @@ void setup() {
   println("File name:", songMetaData[i].fileName());
   println("Song lenght (in milliseconds); ", songMetaData[i].length() );
   println("Song Lenght (in second): ", songMetaData[i].length()/1000);
-  println("Song Lenght (in minutes and seconds): ", songMetaData1.length()/1000/60, "minutes", (.length()/1000)-(.length()/1000/60 *60),"seconds" );
+  println("Song Lenght (in minutes and seconds): ", songMetaData[currentSong].length()/1000/60, "minutes", (song[currentSong].length()/1000)-(song[currentSong].length()/1000/60 *60),"seconds" );
   println("Author", songMetaData[i].author() );
   println("Composer", songMetaData[i].composer() );
   println("Orchestra", songMetaData[i].orchestra() );
@@ -53,30 +54,30 @@ void draw() {
 
 void keyPressed() {
   if (key == 'p' || key == 'P') {
-    if (song1.isPlaying()) {
-      song1.pause();
-    } else if ( song1.position() == song1.length() ) {
-      song1.rewind();
-      song1.play();
+    if (song[currentSong].isPlaying()) {
+      song[currentSong].pause();
+    } else if ( song[currentSong].position() == song[currentSong].length() ) {
+      song[currentSong].rewind();
+      song[currentSong].play();
     } else {
-      song1.play();
+      song[currentSong].play();
     }
   }
   
 
   if (key == 's' || key == 'S') {
-    if (song1.isPlaying()) {
-      song1.pause();
-      song1.rewind();
-    } else if ( song1.position() == song1.length() ) {
-      song1.rewind();
+    if (song[currentSong].isPlaying()) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+    } else if ( song[currentSong].position() == song[currentSong].length() ) {
+      song[currentSong].rewind();
     }
   }
   
-  if (key == 'R' || key == 'r') song1.skip(-1000);
-  if (key == 'F' || key == 'f') song1.skip(1000);
+  if (key == 'R' || key == 'r') song[currentSong].skip(-1000);
+  if (key == 'F' || key == 'f') song[currentSong].skip(1000);
  
-  if (key == 'l' || key == 'L') song1.loop(loopIntNum);
+  if (key == 'l' || key == 'L') song[currentSong].loop(loopIntNum);
   //
   //next button
   //
