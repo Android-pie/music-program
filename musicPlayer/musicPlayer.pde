@@ -6,45 +6,48 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
 Minim minim;
-int numOfSongs = 3;
-AudioPlayer[] song = new AudioPlayer[numOfSongs];
-AudioMetaData[] songMetaData = new AudioMetaData[numOfSongs];
-int loopIntNum;
-int currentSong = numOfSongs - numOfSongs;
+int numbOfSongs = 3;
+int numbOfSoundEffects = 1;
+AudioPlayer[] song = new AudioPlayer[numbOfSongs];
+int currentSong = numbOfSongs - numbOfSongs; //Zero starting index
+int currentSoundEffect = numbOfSoundEffects - numbOfSoundEffects; //Zero starting index
+AudioMetaData songMetaData1; //needs to be an array
+int loopNum = 1; //Able to connect this variable to buttons, increasing the loop number
 
 void setup() {
   size(500, 400);
   minim = new Minim(this);
-  song[currentSong] = minim.loadFile("../music/grove.mp3");
-  song[currentSong += 1] = minim.loadFile("../music/Grove2.mp3");
-  song[currentSong += 1] = minim.loadFile("../music/Grove3.mp3");
+  song[0] = minim.loadFile("../music/grove.mp3");
+  song[1] = minim.loadFile("../music/Grove2.mp3");
+  song[2] = minim.loadFile("../music/Grove3.mp3");
+    songMetaData1 = song[currentSong].getMetaData();
   //
-  songMetaData[0] = song[0].getMetaData();
-  songMetaData[1] = song[1].getMetaData();
-  songMetaData[2] = song[2].getMetaData();
+  //songMetaData[0] = song[0].getMetaData();
+  //songMetaData[1] = song[1].getMetaData();
+  //songMetaData[2] = song[2].getMetaData();
   //
   println("Start of console");
   println("Click the console to finish Starting this program");
   println("Press keyboard to test: P, etc");
   //
-  for(int i=currentSong; i<numOfSongs;) {
-  println("File name:", songMetaData[i].fileName());
-  println("Song lenght (in milliseconds); ", songMetaData[i].length() );
-  println("Song Lenght (in second): ", songMetaData[i].length()/1000);
-  println("Song Lenght (in minutes and seconds): ", songMetaData[currentSong].length()/1000/60, "minutes", (song[currentSong].length()/1000)-(song[currentSong].length()/1000/60 *60),"seconds" );
-  println("Author", songMetaData[i].author() );
-  println("Composer", songMetaData[i].composer() );
-  println("Orchestra", songMetaData[i].orchestra() );
-  println("Album", songMetaData[i].album() );
-  println("Disk", songMetaData[i].disc() );
-  println("Publisher", songMetaData[i].publisher() );
-  println("Date Release", songMetaData[i].date() );
-  println("Copyright", songMetaData[i].copyright() );
-  println("comments", songMetaData[i].comment() );
-  println("Lyrics", songMetaData[i].lyrics() );
-  println("Track", songMetaData[i].track() );
-  println("Genre", songMetaData[i].genre() );
-  println("Encoded", songMetaData[i].encoded() );
+  for(int i=currentSong; i<numbOfSongs;) {
+println("File name:", songMetaData1.fileName());
+println("Song lenght (in milliseconds); ", songMetaData1.length() );
+println("Song Lenght (in second): ", songMetaData1.length()/1000);
+println("Song Lenght (in minutes and seconds): ", songMetaData1.length()/1000/60, "minutes", (song[currentSong].length()/1000)-(song[currentSong].length()/1000/60 *60),"seconds" );
+println("Author", songMetaData1.author() );
+println("Composer", songMetaData1.composer() );
+  //println("Orchestra", songMetaData[i].orchestra() );
+  //println("Album", songMetaData[i].album() );
+  //println("Disk", songMetaData[i].disc() );
+  //println("Publisher", songMetaData[i].publisher() );
+  //println("Date Release", songMetaData[i].date() );
+  //println("Copyright", songMetaData[i].copyright() );
+  //println("comments", songMetaData[i].comment() );
+  //println("Lyrics", songMetaData[i].lyrics() );
+  //println("Track", songMetaData[i].track() );
+  //println("Genre", songMetaData[i].genre() );
+  //println("Encoded", songMetaData[i].encoded() );
   }
   //
 }
@@ -77,7 +80,7 @@ void keyPressed() {
   if (key == 'R' || key == 'r') song[currentSong].skip(-1000);
   if (key == 'F' || key == 'f') song[currentSong].skip(1000);
  
-  if (key == 'l' || key == 'L') song[currentSong].loop(loopIntNum);
+  if (key == 'l' || key == 'L') song[currentSong].loop(loopNum);
   //
   //next button
   //
@@ -85,8 +88,8 @@ void keyPressed() {
     if (song[currentSong].isPlaying() ) {
       song[currentSong].pause();
       song[currentSong].rewind();
-      if (currentSong == numOfSongs - 1){
-        currentSong = numOfSongs - numOfSongs;
+      if (currentSong == numbOfSongs - 1){
+        currentSong = numbOfSongs - numbOfSongs;
       }else{
       currentSong++;
       }
