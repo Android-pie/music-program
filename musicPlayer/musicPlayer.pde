@@ -14,9 +14,9 @@ int currentSong = numberOfSongs - numberOfSongs; //Uses formula or FileIO Memory
 
 
 void setup () {
-  //size(500, 600);
+  size(500, 600);
   minim = new Minim(this); 
-  song1 = minim.loadFile("../music/grove.mp3"); 
+  song1 = minim.loadFile("jingle.mp3"); 
   song1.play(); 
   
 }
