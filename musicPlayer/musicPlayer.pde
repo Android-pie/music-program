@@ -31,7 +31,7 @@ void setup() {
   minim = new Minim(this); 
   var();
   songs();
-  // song[currentSong].play();
+  song[currentSong].play();
   lablefont = createFont ("Harrington", 55); 
   println("Start of Console");
   println("Click the Console to Finish Starting this program");
@@ -47,11 +47,11 @@ void draw() {
   buttons();
   fill(255);
   Lables();
+  Contd_songs();
+  next_Song();
 }
 
 void keyPressed() {
-  println ("Current Song before the next or back button, ", "Number: "+currentSong); //For Debugging
-  println(Title_song_1);
   pause();
   back_Song();
   next_Song();
@@ -61,6 +61,7 @@ void keyPressed() {
   mute();
   vol();
   Loop();
+  Contd_songs();
 }
 
 void mousePressed() {
@@ -71,6 +72,7 @@ void mousePressed() {
   f15();
   r15();
   mute();
-vol();
-Loop();
+  vol();
+  Loop();
+  Contd_songs();
 }
