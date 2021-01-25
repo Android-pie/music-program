@@ -12,9 +12,13 @@ float QuitX, QuitY, QuitWidth, QuitHeight;
 float NextButtonX, NextButtonY, NextButtonWidth, NextButtonHeight;
 float BackButtonX, BackButtonY, BackButtonWidth, BackButtonHeight;
 float PlayButtonX, PlayButtonY, PlayButtonWidth, PlayButtonHeight;
+float F15SecsButtonX, F15SecsButtonY, F15SecsButtonWidth, F15SecsButtonHeight;
+float R15SecsButtonX, R15SecsButtonY, R15SecsButtonWidth, R15SecsButtonHeight;
+float tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight;
 Boolean Title_song_1 = false;
 Boolean Title_song_2 = false;
 Boolean Title_song_3 = false;
+Boolean CurrentSongCheck = false;
 AudioPlayer[] song= new AudioPlayer[numberOfSongs]; //"Song One"
 AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs]; //"Song Meta One"
 int currentSong = numberOfSongs - numberOfSongs; //Uses formula or FileIO Memory
@@ -26,11 +30,13 @@ void setup() {
   minim = new Minim(this); 
   var();
   songs();
+ // song[currentSong].play();
   lablefont = createFont ("Harrington", 55); 
   println("Start of Console");
   println("Click the Console to Finish Starting this program");
   println("Press P to Play and Pause");
 }
+
 
 void draw() {
   background (black);
@@ -39,7 +45,8 @@ void draw() {
   titles();
   buttons();
   fill(255);
-}//End draw()
+ 
+}
 
 void keyPressed() {
   println ("Current Song before the next or back button, ", "Number: "+currentSong); //For Debugging
@@ -48,6 +55,9 @@ void keyPressed() {
   back_Song();
   next_Song();
   quit();
+  f15();
+  r15();
+  mute();
 }
 
 void mousePressed() {
@@ -55,4 +65,7 @@ void mousePressed() {
   next_Song();
   pause();
   back_Song();
+  f15();
+  r15();
+  mute();
 }

@@ -19,7 +19,7 @@ void titles () {
     fill(white);
     textFont(lablefont, 25);
     textAlign (CENTER, CENTER);
-    text("Groove", width*1/4, height*0, width*1/2, height*1/10);
+    text("Groove", tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight);
     Title_song_2 = false;
     Title_song_3 = false;
   }
@@ -28,7 +28,7 @@ void titles () {
     fill(white);
     textFont(lablefont, 25);
     textAlign (CENTER, CENTER);
-    text("Jingles", width*1/4, height*0, width*1/2, height*1/10);
+    text("Jingles", tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight);
     Title_song_1 = false;
     Title_song_3 = false;
   }
@@ -37,7 +37,7 @@ void titles () {
     fill(white);
     textFont(lablefont, 25);
     textAlign (CENTER, CENTER);
-    text("Marcus", width*1/4, height*0, width*1/2, height*1/10);
+    text("Marcus", tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight);
     Title_song_1 = false;
     Title_song_2 = false;
   }
