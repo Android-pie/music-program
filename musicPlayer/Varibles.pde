@@ -1,7 +1,7 @@
 void var() {
-  QuitX = width * 4.85/5;
+  QuitX = width * 4/5;
   QuitY = height * 0.05/5;
-  QuitWidth =  height * 1/20;
+  QuitWidth =  width * 1/10;
   QuitHeight = QuitWidth;
   NextButtonX = width * 0.1/5;
   NextButtonY = PlayButtonY = BackButtonY =  R15SecsButtonY = F15SecsButtonY = height * 3.5/5;
@@ -13,8 +13,9 @@ void var() {
   F15SecsButtonX = 2.5/5;  
   F15SecsButtonWidth = F15SecsButtonHeight;
   R15SecsButtonHeight = R15SecsButtonWidth;
-   tittleRectX = width * 1/4;
-   tittleRectY = height * 0;
-   tittleRectWidth = width*1/2;
-   tittleRectHeight =  height*1/10;
+  tittleRectX = width * 1/4;
+  tittleRectY = height * 0;
+  tittleRectWidth = width*1/2;
+  tittleRectHeight =  height*1/10;
+  ampvol = 10.0;
 }

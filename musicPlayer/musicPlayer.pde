@@ -15,6 +15,7 @@ float PlayButtonX, PlayButtonY, PlayButtonWidth, PlayButtonHeight;
 float F15SecsButtonX, F15SecsButtonY, F15SecsButtonWidth, F15SecsButtonHeight;
 float R15SecsButtonX, R15SecsButtonY, R15SecsButtonWidth, R15SecsButtonHeight;
 float tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight;
+float ampvol;
 Boolean Title_song_1 = false;
 Boolean Title_song_2 = false;
 Boolean Title_song_3 = false;
@@ -24,13 +25,13 @@ AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs]; //"Song Meta On
 int currentSong = numberOfSongs - numberOfSongs; //Uses formula or FileIO Memory
 PFont lablefont;
 color black = #000000;
-color white = #FFFFFF; 
+color white = #FFFFFF, Red = #FA0808; 
 void setup() {
   size(500, 400); //fullScreen();
   minim = new Minim(this); 
   var();
   songs();
- // song[currentSong].play();
+  // song[currentSong].play();
   lablefont = createFont ("Harrington", 55); 
   println("Start of Console");
   println("Click the Console to Finish Starting this program");
@@ -45,7 +46,7 @@ void draw() {
   titles();
   buttons();
   fill(255);
- 
+  Lables();
 }
 
 void keyPressed() {
@@ -58,6 +59,8 @@ void keyPressed() {
   f15();
   r15();
   mute();
+  vol();
+  Loop();
 }
 
 void mousePressed() {
@@ -68,4 +71,6 @@ void mousePressed() {
   f15();
   r15();
   mute();
+vol();
+Loop();
 }

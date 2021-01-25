@@ -37,8 +37,13 @@ void titles () {
     fill(white);
     textFont(lablefont, 25);
     textAlign (CENTER, CENTER);
-    text("Marcus", tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight);
+    text("Jingles 2", tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight);
     Title_song_1 = false;
     Title_song_2 = false;
   }
+  
+  //
+  
+  
+ 
 }
