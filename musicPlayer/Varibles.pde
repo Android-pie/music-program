@@ -6,11 +6,11 @@ void var() {
   QuitHeight = QuitWidth;
 
 
-  NextButtonY = PlayButtonY = BackButtonY =  R1SecsButtonY = F1SecsButtonY= LoopButtonY = height * 3.5/5;
+  NextButtonY = PlayButtonY = BackButtonY =  R1SecsButtonY = F1SecsButtonY= LoopButtonY = VolUpY = VolDownY = height * 3.5/5;
 
   NextButtonWidth =  height * 1/7;
 
-  NextButtonHeight = PlayButtonHeight = PlayButtonWidth = BackButtonHeight = BackButtonWidth = R1SecsButtonWidth = R1SecsButtonHeight = F1SecsButtonWidth =  F1SecsButtonHeight = LoopButtonWidth = LoopButtonHeight = NextButtonWidth;
+  NextButtonHeight = PlayButtonHeight = PlayButtonWidth = BackButtonHeight = BackButtonWidth = R1SecsButtonWidth = R1SecsButtonHeight = F1SecsButtonWidth =  F1SecsButtonHeight = LoopButtonWidth = LoopButtonHeight =  VolUpWidth = VolUpHeight = VolDownWidth = VolDownHeight = NextButtonWidth;
 
   PlayButtonX = width * 2.5/5;
 
@@ -23,7 +23,8 @@ void var() {
   F1SecsButtonX = width * 3.7/5;  
 
   LoopButtonX = width * 4.3/5; 
-
+  VolUpX =  width * 0.7/5;
+VolDownX = width * 0.1/5  ;
   tittleRectX = width * 1/4;
   tittleRectY = height * 0;
   tittleRectWidth = width*1/2;

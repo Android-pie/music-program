@@ -17,6 +17,8 @@ float F1SecsButtonX, F1SecsButtonY, F1SecsButtonWidth, F1SecsButtonHeight;
 float R1SecsButtonX, R1SecsButtonY, R1SecsButtonWidth, R1SecsButtonHeight;
 float tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight;
 float ImageButtonX, ImageButtonY, ImageButtonWidth, ImageButtonHeight; 
+float VolUpX, VolUpY, VolUpWidth, VolUpHeight;
+float VolDownX, VolDownY, VolDownWidth, VolDownHeight;
 float ampvol;
 Boolean Title_song_1 = false;
 Boolean Title_song_2 = false;
