@@ -1,5 +1,5 @@
 void next_Song() {
-  if (key == 'n' || key == 'N'|| mouseX>NextButtonX && mouseX<NextButtonX + NextButtonWidth && mouseY>NextButtonY && mouseY<NextButtonY+NextButtonHeight || CurrentSongCheck == true) {
+  if (key == 'n' || key == 'N'|| mouseX>NextButtonX && mouseX<NextButtonX + NextButtonWidth && mouseY>NextButtonY && mouseY<NextButtonY+NextButtonHeight && mousePressed) {
     CurrentSongCheck =false;
     if (song[currentSong].isPlaying()) {
       song[currentSong].pause();
@@ -19,5 +19,4 @@ void next_Song() {
       }
     }
   }
-  song[currentSong].play();
 }
