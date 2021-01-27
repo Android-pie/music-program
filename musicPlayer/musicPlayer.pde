@@ -19,6 +19,7 @@ float F1SecsButtonX, F1SecsButtonY, F1SecsButtonWidth, F1SecsButtonHeight;
 float R1SecsButtonX, R1SecsButtonY, R1SecsButtonWidth, R1SecsButtonHeight;
 float tittleRectX, tittleRectY, tittleRectWidth, tittleRectHeight;
 float ImageButtonX, ImageButtonY, ImageButtonWidth, ImageButtonHeight; 
+float StopButtonX, StopButtonY, StopButtonWidth, StopButtonHeight; 
 float VolUpX, VolUpY, VolUpWidth, VolUpHeight;
 float VolDownX, VolDownY, VolDownWidth, VolDownHeight;
 float ampvol;
@@ -84,6 +85,7 @@ void keyPressed() {
   Loop();
   Contd_songs();
   Shuffle();
+  Stop();
 }
 
 void mousePressed() {
@@ -99,4 +101,5 @@ void mousePressed() {
   Loop();
   Contd_songs();
   Shuffle();
+  Stop();
 }
