@@ -19,4 +19,5 @@ void next_Song() {
       }
     }
   }
+   soundEffect[currentSound].play();
 }

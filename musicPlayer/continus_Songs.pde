@@ -20,6 +20,14 @@ void Contd_songs() {
       } else {
         currentSong += 1;
       }
+      song[currentSong].play();
     }
+  }
+ 
+  
+  if ( soundEffect[currentSound].position() == soundEffect[currentSound].length()) {
+
+    soundEffect[currentSound].rewind();
+    soundEffect[currentSound].pause();
   }
 }

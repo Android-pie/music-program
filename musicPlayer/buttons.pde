@@ -10,4 +10,6 @@ void buttons() {
   rect(LoopButtonX, LoopButtonY, LoopButtonWidth, LoopButtonHeight);
   rect(VolUpX, VolUpY, VolUpWidth, VolUpHeight);
   rect(VolDownX, VolDownY, VolDownWidth, VolDownHeight);
+  rect(MutebuttonX, MutebuttonY, MutebuttonWidth, MutebuttonHeight);
+  rect(ShufflebuttonX, ShufflebuttonY, ShufflebuttonWidth, ShufflebuttonHeight);
 }

@@ -6,7 +6,7 @@ void var() {
   QuitHeight = QuitWidth;
 
 
-  NextButtonY = PlayButtonY = BackButtonY =  R1SecsButtonY = F1SecsButtonY= LoopButtonY = VolUpY = VolDownY = height * 3.5/5;
+  NextButtonY = PlayButtonY = BackButtonY =  R1SecsButtonY = F1SecsButtonY= LoopButtonY = VolUpY = VolDownY = height * 3.25/5;
 
   NextButtonWidth =  height * 1/7;
 
@@ -36,6 +36,13 @@ VolDownX = width * 0.1/5  ;
   ImageButtonHeight = height * 1.5/3;
 
   ampvol = 10.0;
+  
+  ShufflebuttonX = width * 2/5;
+  ShufflebuttonY = MutebuttonY = height * 4.15/5;
+  ShufflebuttonWidth = ShufflebuttonHeight = height * 1/7;;
+  
+  MutebuttonX = width * 3/5;
+  MutebuttonWidth = MutebuttonHeight = height * 1/7;;
 
 
   img1 = loadImage("Diwali2.JPG");

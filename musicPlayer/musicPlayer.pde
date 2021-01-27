@@ -8,6 +8,8 @@ import ddf.minim.ugens.*;
 Minim minim;
 
 int numberOfSongs = 3;
+int NumOfSounds = 1;
+int currentSound = NumOfSounds - NumOfSounds; 
 float QuitX, QuitY, QuitWidth, QuitHeight;
 float NextButtonX, NextButtonY, NextButtonWidth, NextButtonHeight;
 float BackButtonX, BackButtonY, BackButtonWidth, BackButtonHeight;
@@ -20,12 +22,17 @@ float ImageButtonX, ImageButtonY, ImageButtonWidth, ImageButtonHeight;
 float VolUpX, VolUpY, VolUpWidth, VolUpHeight;
 float VolDownX, VolDownY, VolDownWidth, VolDownHeight;
 float ampvol;
+float ShufflebuttonX, ShufflebuttonY, ShufflebuttonWidth, ShufflebuttonHeight; 
+float MutebuttonX, MutebuttonY, MutebuttonWidth, MutebuttonHeight;
+float random1, random2, random3;
 Boolean Title_song_1 = false;
 Boolean Title_song_2 = false;
 Boolean Title_song_3 = false;
 Boolean CurrentSongCheck = false;
+Boolean LOOP = false;
 AudioPlayer[] song= new AudioPlayer[numberOfSongs]; 
 AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs]; 
+AudioPlayer[] soundEffect = new AudioPlayer[NumOfSounds];
 int currentSong = numberOfSongs - numberOfSongs; 
 PFont lablefont;
 color black = #000000;
@@ -49,6 +56,7 @@ void setup() {
   println("Click the Console to Finish Starting this program");
   println("Press P to Play and Pause");
   background (black);
+  
 }
 
 
@@ -75,6 +83,7 @@ void keyPressed() {
   vol();
   Loop();
   Contd_songs();
+  Shuffle();
 }
 
 void mousePressed() {
@@ -89,4 +98,5 @@ void mousePressed() {
   vol();
   Loop();
   Contd_songs();
+  Shuffle();
 }

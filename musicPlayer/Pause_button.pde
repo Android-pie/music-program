@@ -9,5 +9,7 @@ void pause() {
     } else {
       song[currentSong].play();
     }
-  }
+  soundEffect[currentSound].play();
+}
+  
 }

@@ -24,4 +24,5 @@ void back_Song() {
       }
     }
   }
+   soundEffect[currentSound].play();
 }
